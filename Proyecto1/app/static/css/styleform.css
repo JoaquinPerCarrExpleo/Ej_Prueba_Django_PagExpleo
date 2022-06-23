@@ -1,0 +1,11 @@
+.formu{
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   color: rgb(51, 163, 238);
+}
+
+.field{
+    color: black;
+    background-color: #a0d8c3;
+}

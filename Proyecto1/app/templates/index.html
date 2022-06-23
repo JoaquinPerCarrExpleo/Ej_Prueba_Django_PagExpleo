@@ -1,0 +1,41 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{%static 'css/style.css'%}"
+      media="screen"
+    />
+    <title>Expleo | Homepage</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a class="active" href="#Home">Home</a>
+      <a href="admin/">Admin</a>
+      <a href="search/">Búsqueda serv. (GET)</a>
+      <a href="forms/">Añadir servicio (POST)</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
+
+    <div class="content">
+      <h2>Servicios de ingeniería disponibles</h2>
+      <h1>{{x.name}}</h1>
+      
+        {% for item in x.item_set.all %}
+        <fieldset>
+          <legend>{{item.title}}</legend>
+        <p class="serv">{{item.content}}<br> {{item.fechaIni}}</p>
+        </fieldset>
+        <br>
+        {% endfor %}
+      </div>
+    </div>
+
+    <script src="{%static 'js/script.js'%}"></script>
+  </body>
+</html>
+<br>

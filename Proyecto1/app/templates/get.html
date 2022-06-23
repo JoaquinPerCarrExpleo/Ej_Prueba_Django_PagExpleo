@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link
+    rel="stylesheet"
+    type="text/css"
+    href="{%static 'css/styleform.css'%}"
+    media="screen"
+  /> -->
+    <title>Get</title>
+</head>
+<body>
+    <h1>Consultar servicios por título</h1>
+    <fieldset class="field" >
+        <legend><b>Buscar un servicio</b></legend>
+        <form method="post" action="" class="formu"> <!--Cuando rellenes el formulario de la BD, vaya al inicio -->
+            {% csrf_token %}
+            {{menganito.as_p}}
+            <button type="submit", name="save"> Crear nuevo servicio</button>
+        </form>
+    </fieldset>
+
+     <p><b>{{consulta.title}}</b> <!-- menganito tmb vale-->
+         <br>{{consulta.content}}<br> 
+         {{consulta.fechaIni}}</p>
+
+</body>
+</html>
