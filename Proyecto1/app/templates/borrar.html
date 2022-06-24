@@ -5,39 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <!-- <link
+    rel="stylesheet"
+    type="text/css"
+    href="{%static 'css/styleform.css'%}"
+    media="screen"
+  /> -->
+
   <style>
-    .atras{
-        margin-top:8px;
-        margin-right:30px;
-    }
-    .atras, .titulo{
-        display: flex;
-        justify-content: flex-start;
-    }
-    </style>
-        <link
-        rel="stylesheet"
-        type="text/css"
-        href="{%static 'css/styleform.css'%}"
-        media="screen"
-    />
-    <title>Forms</title>
+      .atras{
+          margin-top:8px;
+          margin-right:30px;
+      }
+      .atras, .titulo{
+          display: flex;
+          justify-content: flex-start;
+      }
+  </style>
+    <title>Delete</title>
 </head>
 <body>
     <h1 class= "titulo">
         <form method="get" action="../"><button type="submit" class="atras">Atrás</button></form>
-        Pág para introducir datos en la base de datos
+        Eliminación de servicios por título
     </h1>
     <fieldset class="field" >
-        <legend><b>Rellene los campos para añadir un servicio</b></legend>
+        <legend><b>Eliminación de un servicio</b></legend>
         <form method="post" action="" class="formu"> <!--Cuando rellenes el formulario de la BD, vaya al inicio -->
             {% csrf_token %}
-    
-            {{pepito.as_p}}
-            <button type="submit", name="save"> Crear nuevo servicio</button>
+            {{elim.as_p}}
+            <button type="submit", name="save"> Borrar servicio</button>
         </form>
     </fieldset>
+
+     <p><b>{{respuesta}}</b> 
 
 </body>
 </html>

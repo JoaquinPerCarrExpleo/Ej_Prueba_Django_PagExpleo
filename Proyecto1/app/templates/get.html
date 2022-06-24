@@ -11,13 +11,27 @@
     href="{%static 'css/styleform.css'%}"
     media="screen"
   /> -->
+
+  <style>
+      .atras{
+          margin-top:8px;
+          margin-right:30px;
+      }
+      .atras, .titulo{
+          display: flex;
+          justify-content: flex-start;
+      }
+  </style>
     <title>Get</title>
 </head>
 <body>
-    <h1>Consultar servicios por título</h1>
+    <h1 class= "titulo">
+        <form method="get" action="../"><button type="submit" class="atras">Atrás</button></form>
+        Consultar servicios por título
+    </h1>
     <fieldset class="field" >
         <legend><b>Buscar un servicio</b></legend>
-        <form method="post" action="" class="formu"> <!--Cuando rellenes el formulario de la BD, vaya al inicio -->
+        <form method="get" action="" class="formu"> <!--Cuando rellenes el formulario de la BD, vaya al inicio -->
             {% csrf_token %}
             {{menganito.as_p}}
             <button type="submit", name="save"> Crear nuevo servicio</button>
